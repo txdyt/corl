@@ -1,0 +1,33 @@
+cabal-version:       2.2
+name:                corl
+version:             0.1.0.0
+homepage:            https://github.com/txdyt/corl
+license:             BSD-3-Clause
+license-file:        LICENSE
+author:              Jianbo Liu
+maintainer:          public@jliu.net
+category:            Language
+extra-source-files:  CHANGELOG.md
+
+
+common shared
+  default-language:    Haskell2010
+  default-extensions:  FlexibleContexts
+  build-depends:       base >= 4.7 && < 5
+                     , containers
+                     , prettyprinter
+                     , text
+                     , hashable
+
+library
+  import:              shared
+  exposed-modules:     Corl.Expr
+                     , Corl.Pretty
+  hs-source-dirs:      src
+
+
+test-suite corl-test
+  import:              shared
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             MyLibTest.hs
