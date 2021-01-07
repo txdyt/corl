@@ -1,9 +1,9 @@
 {-# LANGUAGE DeriveFunctor #-}
 {-# LANGUAGE DerivingStrategies #-}
 {-# LANGUAGE GeneralisedNewtypeDeriving #-}
-{-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE OverloadedLists #-}
 {-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE OverloadedLists #-}
+{-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TypeFamilies #-}
 
 module Corl.Expr where
@@ -94,5 +94,5 @@ preludeDefs =
     Defn "K1" ["y", "z"] (Var "z"),
     Defn "S" ["a", "b", "c"] ((Var "a" <> Var "c") <> (Var "b" <> Var "c")),
     Defn "compose" ["f", "g", "x"] (Var "f" <> (Var "g" <> Var "x")),
-    Defn "twice" ["f"] ((Var "compose" <>  Var "f") <> Var "f")
+    Defn "twice" ["f"] ((Var "compose" <> Var "f") <> Var "f")
   ]
